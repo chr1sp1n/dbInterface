@@ -9,8 +9,9 @@
  *    version: 0.1.1 2016-09-08
  *
  */
+namespace chr1sp1n\dbInterface;
 
-class DbInterface{
+class dDbInterface{
 
 	public $error;
 	public $lastId;
