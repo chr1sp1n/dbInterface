@@ -1,0 +1,6 @@
+2016-09-08	0.1.1
+-	queryToRows return false on error or Array(false) on no record found 
+
+2015-10-20	0.1.0
+-	Project start
+
