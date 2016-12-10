@@ -10,8 +10,9 @@
  *
  */
 namespace chr1sp1n\dbInterface;
+use mysqli;
 
-class dDbInterface{
+class dbInterface{
 
 	public $error;
 	public $lastId;
@@ -108,3 +109,4 @@ class dDbInterface{
 }
 
 ?>
+
