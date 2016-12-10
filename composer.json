@@ -14,8 +14,8 @@
         }
     ],
     "autoload": {
-        "psr-4": {
-            "chr1sp1n\\dbInterface\\": "src"
+        "psr-0": {
+            "chr1sp1n\\dbInterface": "src"
         }
     }
 }
