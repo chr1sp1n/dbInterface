@@ -2,9 +2,11 @@
 
 /**
  *
- *  DbInterface | simple interface for MySql database for PHP
- *	Created by Christian Spinelli, october 2015
- *  Version: 0.1.2 2015-02-08
+ *  DbInterface | PHP class for simple interfacing with MySql databases
+ *
+ *	autor: chr1sp1n
+ *	start: october 2015
+ *    version: 0.1.1 2016-09-08
  *
  */
 
@@ -28,11 +30,11 @@ class DbInterface{
 	}
 
 	/* Crea una array contenente tutte le righe del risultato della query
-			Se nella query è presente la direttiva 'LIMIT 1' (limita il risultato alla prima riga) crea una variabile semplice
-			Se nella query inizia con la direttiva 'INSERT TO'
-			Se nella query inizia con la direttiva 'UPDATE'
-	 		Se nella query inizia con la direttiva 'COUNT(*)'
-	 		Se nella query inizia con la direttiva 'DELETE'
+		Se nella query è presente la direttiva 'LIMIT 1' (limita il risultato alla prima riga) crea una variabile semplice
+		Se nella query inizia con la direttiva 'INSERT TO'
+		Se nella query inizia con la direttiva 'UPDATE'
+	 	Se nella query inizia con la direttiva 'COUNT(*)'
+	 	Se nella query inizia con la direttiva 'DELETE'
 	 */
 	function queryToRows($query){
 		$query = trim($query);
@@ -48,8 +50,6 @@ class DbInterface{
 				$this->error = array('number' => $this->DB->errno, 'description' => $this->DB->error);
 				return false;
 			}
-
-			//$query = $this->secureSql($query);
 
 			if($result = $this->DB->query($query)){
 				if(stripos($query, 'LIMIT 1')==(strlen($query)-7)){
@@ -92,18 +92,18 @@ class DbInterface{
 			return '';
 		}
 	}
-
+		
+	/* close db connection */
 	function close(){
 		$this->DB->close();
 	}
 
-}
-
-
-function queryClean($query){
-	$query = str_replace(Array("\n\r","\n\r","\n","\r")," ", $query);
-	$query = str_replace(Array("\t"),"", $query);
-	return $query;
+	function queryClean($query){
+		$query = str_replace(Array("\n\r","\n\r","\n","\r")," ", $query);
+		$query = str_replace(Array("\t"),"", $query);
+		return $query;
+	}
+	
 }
 
 ?>
