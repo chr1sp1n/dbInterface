@@ -1,11 +1,11 @@
 <?php
 
 	$db_config = array(
-		'mySQLserverName'	=>	"localhost",
-		'mySQLserverPort'	=>	"3306",
-		'dbName'			=>	"balance",
-		'dbUserName'		=>	"balance",
-		'dbPassword'		=>	"balance"
+		'mySQLserverName'	=>	"localhost",	// server host or IP
+		'mySQLserverPort'	=>	"3306",		// MySql server port
+		'dbName'		=>	"test",		// Database name
+		'dbUserName'		=>	"test",		// Database username
+		'dbPassword'		=>	"test"		// Username password
 	);
 
 ?>
